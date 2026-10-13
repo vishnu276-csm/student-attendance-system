@@ -7,10 +7,10 @@ export const DEMO_CREDENTIALS = [
   {
     username: 'admin',
     password: 'admin123',
-    name: 'Dr. Sarah Mitchell',
+    name: 'Vishnu Vardhan',
     role: 'College Administrator',
     department: 'Academic Administration',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
+    avatar: null
   },
   {
     username: 'teacher',
@@ -18,13 +18,21 @@ export const DEMO_CREDENTIALS = [
     name: 'Prof. Rajesh Kumar',
     role: 'Faculty Professor',
     department: 'Computer Science & Engineering',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
+    avatar: null
   }
 ];
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(() => {
-    return getStoredAuth();
+    const stored = getStoredAuth();
+    if (stored && stored.username === 'admin') {
+      return {
+        ...stored,
+        name: 'Vishnu Vardhan',
+        avatar: null
+      };
+    }
+    return stored;
   });
 
   useEffect(() => {

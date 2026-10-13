@@ -183,11 +183,31 @@ export default function Navbar({ onToggleMobile, pageTitle }) {
               }}
               aria-label="User profile options"
             >
-              <img
-                src={currentUser.avatar}
-                alt={currentUser.name}
-                style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }}
-              />
+              {currentUser.avatar ? (
+                <img
+                  src={currentUser.avatar}
+                  alt={currentUser.name}
+                  style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%)',
+                    color: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 700,
+                    fontSize: '0.8rem',
+                    flexShrink: 0
+                  }}
+                >
+                  {currentUser.name ? currentUser.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'U'}
+                </div>
+              )}
               <div style={{ textAlign: 'left', lineHeight: 1.2 }}>
                 <div style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-main)' }}>
                   {currentUser.name}
@@ -215,11 +235,31 @@ export default function Navbar({ onToggleMobile, pageTitle }) {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingBottom: 12, borderBottom: '1px solid var(--border-color)', marginBottom: 12 }}>
-                  <img
-                    src={currentUser.avatar}
-                    alt={currentUser.name}
-                    style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }}
-                  />
+                  {currentUser.avatar ? (
+                    <img
+                      src={currentUser.avatar}
+                      alt={currentUser.name}
+                      style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%)',
+                        color: '#ffffff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 800,
+                        fontSize: '1.05rem',
+                        flexShrink: 0
+                      }}
+                    >
+                      {currentUser.name ? currentUser.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'U'}
+                    </div>
+                  )}
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-main)' }}>
                       {currentUser.name}

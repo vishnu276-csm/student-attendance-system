@@ -149,17 +149,38 @@ export default function Sidebar({ mobileOpen, onCloseMobile }) {
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
-                <img
-                  src={currentUser.avatar}
-                  alt={currentUser.name}
-                  style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    border: '2px solid rgba(255,255,255,0.15)'
-                  }}
-                />
+                {currentUser.avatar ? (
+                  <img
+                    src={currentUser.avatar}
+                    alt={currentUser.name}
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '2px solid rgba(255,255,255,0.15)'
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%)',
+                      color: '#ffffff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      flexShrink: 0,
+                      border: '2px solid rgba(255,255,255,0.15)'
+                    }}
+                  >
+                    {currentUser.name ? currentUser.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'U'}
+                  </div>
+                )}
                 <div style={{ minWidth: 0, overflow: 'hidden' }}>
                   <div style={{ fontSize: '0.84rem', fontWeight: 600, color: '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {currentUser.name}

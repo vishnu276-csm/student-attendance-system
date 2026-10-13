@@ -53,7 +53,7 @@ Designed as a college mini-project for professors and academic administrators to
   - JSON database backup export and data wipe tools.
 
 - **🔐 Demonstration Authentication**:
-  - Admin login: `admin` / `admin123` (*Dr. Sarah Mitchell*, Administrator)
+  - Admin login: `admin` / `admin123` (*Vishnu Vardhan*, Administrator)
   - Faculty login: `teacher` / `teacher123` (*Prof. Rajesh Kumar*, Computer Science)
   - One-click credential filler buttons on the login page.
 

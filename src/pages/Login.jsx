@@ -137,7 +137,7 @@ export default function Login() {
               style={{ justifyContent: 'center', fontSize: '0.78rem' }}
             >
               <HiKey size={14} color="var(--primary)" />
-              <span>Admin (Sarah M.)</span>
+              <span>Admin (Vishnu V.)</span>
             </button>
             <button
               type="button"
